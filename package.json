@@ -1,0 +1,20 @@
+{
+  "name": "todo-api",
+  "version": "1.0.0",
+  "description": "A simple todo api",
+  "main": "index.js",
+  "author": "Blake Yeboah",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "mongodb": "^3.4.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js localhost 5000"
+  }
+}
