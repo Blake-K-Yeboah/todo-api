@@ -95,5 +95,26 @@ router.put('/:id', (req, res) => {
             db.close();
         });
     })
+});
+
+router.delete('/:id', (req, res) => {
+
+    // Delete Specified Todos
+    connection.then(db => {
+        const dbo = db.db('tododb');
+
+        const _id = new mongo.ObjectID(req.params.id);
+
+        const query = { _id };
+
+        dbo.collection('todos').deleteOne(query, (err, result) => {
+            if (err) {
+                res.status(500).send(err);
+            } else {
+                res.send(`${result.deletedCount} document deleted.`);
+            }
+            db.close();
+        });
+    })
 })
 module.exports = router;
